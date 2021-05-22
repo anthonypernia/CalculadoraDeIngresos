@@ -20,12 +20,18 @@ function createRowData() {
     let item= prompt('Que item desea agregar??');
     let ingreso= parseInt(prompt('Coloque el monto de ingreso de este item'));
     let egreso= parseInt(prompt('Coloque el monto de egreso de este item'));
-    let rowData = [item, ingreso, egreso]
-    return rowData;
+    return new registroGasto(item, ingreso, egreso);
 }
+//obj
+function registroGasto(item,ingreso, egreso){
+  this.item = item
+  this.ingreso = ingreso
+  this.egreso = egreso
+}
+
 function calculateDataRow(dataRow,tbodyRef) {
   let i=1
-  dataRow.forEach(data => createRow(tbodyRef, i++ , data[0], data[1], data[2]));
+  dataRow.forEach(data => createRow(tbodyRef, i++ , data.item, data.ingreso, data.egreso));
 }
 
 var i=1
