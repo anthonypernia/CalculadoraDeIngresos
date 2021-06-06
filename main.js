@@ -134,9 +134,12 @@ function backAndDelete() {
 
 ///probando jquery
 $(document).ready(obtainDataFromInit());
-
+$('#buttonBack').on('click', () => {
+  backAndDelete();
+});
+$('#formInputData').on('submit', () => {
+  insertDataFromUser();
+});
+//formInput.addEventListener("submit", insertDataFromUser);
 //document.addEventListener("DOMContentLoaded", obtainDataFromInit);
-
-formInput.addEventListener("submit", insertDataFromUser);
-
-buttonBack.addEventListener("click", backAndDelete);
+//buttonBack.addEventListener("click", backAndDelete);
