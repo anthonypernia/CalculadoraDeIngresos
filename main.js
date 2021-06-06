@@ -1,8 +1,9 @@
-var titulo = document.getElementById("titulo_calculadora");
-var subtitulo = document.getElementById("subtitulo_calculadora");
+var titulo = document.getElementById("title_main");
+var subtitulo = document.getElementById("subtitle_main");
 titulo.textContent = "Tabla de ingresos y egresos";
 var person = null;
 var divTable = document.getElementById("divTables");
+var buttonBack = document.getElementById("buttonBack");
 
 tbodyRef = document
   .getElementById("tableBalance")
@@ -26,14 +27,25 @@ function createRow(tbodyRef, expense) {
 }
 
 function insertDataFromUser(e) {
-  let expense = new Expense(
-    Math.floor(Math.random() * 10001),
-    itemInput.value,
-    incomeInput.value,
-    expenseInput.value
-  );
-  person.addExpense(expense);
-  sessionStorage.setItem("user", JSON.stringify(person));
+  if (incomeInput.value.length > 0 || expenseInput.value.length > 0) {
+    if(incomeInput.value.length==0){
+      incomeInput.value=0
+    }
+    if(expenseInput.value.length==0){
+      expenseInput.value=0
+    }
+    if(itemInput.value.length==0){
+      itemInput.value="No definido"
+    }
+    let expense = new Expense(
+      Math.floor(Math.random() * 10001),
+      itemInput.value,
+      incomeInput.value,
+      expenseInput.value
+    );
+    person.addExpense(expense);
+    sessionStorage.setItem("user", JSON.stringify(person));
+  }
 }
 
 function updateRows() {
@@ -54,40 +66,52 @@ function updateResult() {
   });
 
   if (personJson.expensesList.length > 1) {
-    let tableResult = document.createElement("table")
-    if (incomeAll>expenseAll){
-      var color1 = "#caf7e3"
-      var color2 = "#edffec"
+    let tableResult = document.createElement("table");
+    if (incomeAll > expenseAll) {
+      var color1 = "#67B99A";
+      var color2 = "#99E2B4";
+    } else if(incomeAll == expenseAll){
+      var color1 = "#FCF45D";
+      var color2 = "#FCF6BD";
     }else{
-      var color1 = "#e4bad4"
-      var color2 = "#f6dfeb"
+      var color1 = "#FF0A54";
+      var color2 = "#FAE0E4";
     }
-    tableResult.className="table"
-    tableResult.style='background-color:'+color1+'; margin-top:40px;'
-    tableResult.innerHTML = 
-    '<thead class="titleRow" style="background-color:'+color2+';"> \
+    tableResult.className = "table";
+    tableResult.style = "margin-top:50px;";
+    tableResult.innerHTML =
+      '<thead class="titleRow" style="background-color:' +
+      color1 +
+      ';"> \
         <tr> \
           <th scope="col">Cantidad de Items totales</th> \
           <th scope="col">Ingresos totales</th> \
           <th scope="col">Egresos totales</th> \
         </tr> \
     </thead> \
-    <tbody class="itemsRow" style="background-color:'+color2+';"> \
+    <tbody class="itemsRow" style="background-color:' +
+      color2 +
+      ';"> \
       <tr> \
-        <td  >'+items+' Items</td> \
-        <td>'+incomeAll+'$</td> \
-        <td>'+expenseAll+'$</td> \
+        <td  >' +
+      items +
+      " Items</td> \
+        <td>" +
+      incomeAll +
+      "$</td> \
+        <td>" +
+      expenseAll +
+      "$</td> \
       </tr> \
-    </tbody>'
-    
-    divTable.appendChild(tableResult)
+    </tbody>";
+
+    divTable.appendChild(tableResult);
   }
 }
 
 function obtainDataFromInit() {
-  console.log("reload");
   personJson = JSON.parse(sessionStorage.getItem("user"));
-  if(personJson!=null){
+  if (personJson != null) {
     person = new Person(personJson.id, personJson.name);
 
     if (personJson.expensesList.length != 0) {
@@ -97,13 +121,22 @@ function obtainDataFromInit() {
     }
     subtitulo.textContent = "Buen dia " + person.name + "!!";
     updateRows();
-  }else{
-    alert("Carga un usuario!")
+  } else {
+    alert("Carga un usuario!");
     window.location.href = "index.html";
   }
-
 }
 
-document.addEventListener("DOMContentLoaded", obtainDataFromInit);
+function backAndDelete() {
+  sessionStorage.clear();
+  window.location.href = "index.html";
+}
+
+///probando jquery
+$(document).ready(obtainDataFromInit());
+
+//document.addEventListener("DOMContentLoaded", obtainDataFromInit);
 
 formInput.addEventListener("submit", insertDataFromUser);
+
+buttonBack.addEventListener("click", backAndDelete);

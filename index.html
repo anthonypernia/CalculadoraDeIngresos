@@ -7,14 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100&display=swap"
+        rel="stylesheet">
     <title>Calculadora de gastos - Entrada | Salida</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bodyBackground mt-4 mb-4">
     <div>
-        <h1 id="titulo">Calculadora de costos</h1>
-        <h2 class="subtitulo">Ingrese su nombre y apellido</h2>
+        <h1 id="titulo_init">Calculadora de costos</h1>
+        <h2 id="subtitulo_init">Ingrese su nombre y apellido</h2>
     </div>
     <div>
         <form id="formInputData">
@@ -23,8 +26,8 @@
                     <input id="nameInput" type="text" class="form-control" placeholder="Nombre">
                 </div>
             </div>
-            <a href="main.html" id="itemInputMain" class="btn btn-primary btn-lg offset-4 col-4 mt-4 center active "
-                role="button" aria-pressed="true">Ingresar a la calculadora</a>
+            <a href="main.html" id="buttonSendDataMain" class="btn btn-primary btn-lg offset-4 col-4 mt-4 center active "
+                role="button" aria-pressed="true"><h3 class="textButton">Ingresar a la calculadora</h3></a>
         </form>
     </div>
 

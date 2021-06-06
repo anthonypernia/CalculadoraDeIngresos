@@ -1,0 +1,64 @@
+
+
+/*
+Texto
+*/
+#titulo_init, #subtitulo_init, .textButton, input, #title_main, #subtitle_main{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+}
+.textButton{
+    font-weight: 300;
+}
+
+/*
+Boton de inicio
+*/
+#buttonSendDataMain, #itemInputButton, #buttonBack{
+    color: black;
+    background-color: #ABC4FF;
+    border: black;
+    
+
+}
+#buttonSendDataMain:hover, #itemInputButton:hover, #buttonBack:hover{
+    color: rgb(36, 35, 35);
+    background-color: #c8d9ff;
+}
+
+
+/*
+Background de toda la pag
+*/
+.bodyBackground{
+    background-color: #EDF2FB;
+}
+
+/*
+Background de titulo
+*/
+.table{
+    background-color: #ABC4FF;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+/*
+Background cada una de las lineas de tabla
+*/
+.itemsRow{
+    background-color: #edf2fb;
+    border-color: #edf2fb;
+    text-align: center;
+}
+.titleRow{
+    text-align: center;
+}
+h2{
+    font-size: 20px;
+    color:black;
+    text-align: center;
+}
+h1{
+    color:black;
+    text-align: center;
+}

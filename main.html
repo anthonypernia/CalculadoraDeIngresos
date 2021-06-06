@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100&display=swap"
+        rel="stylesheet">
     <title>Calculadora de gastos - Entrada | Salida</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,8 +17,8 @@
 <body class="bodyBackground mt-4 mb-4">
     <section class="ml-4 mr-4">
         <div id="divTables" class="divBackground">
-            <h1 id="titulo_calculadora">Ingresos</h1>
-            <h2 id="subtitulo_calculadora"> </h2>
+            <h1 id="title_main"></h1>
+            <h2 id="subtitle_main"> </h2>
             <table class="table" id="tableBalance">
                 <thead class="titleRow">
                     <tr>
@@ -42,23 +45,28 @@
             <form id="formInputData">
                 <div class="form-row">
                     <div class="col">
-                        <input id = "itemInput" type="text" class="form-control" placeholder="Item a cargar">
+                        <input id="itemInput" type="text" class="form-control" placeholder="Item a cargar">
                     </div>
                     <div class="col">
-                        <input id = "incomeInput" type="number" class="form-control" placeholder="Ingreso">
+                        <input id="incomeInput" type="number" class="form-control" placeholder="Ingreso">
                     </div>
                     <div class="col">
-                        <input id = "expenseInput" type="number" class="form-control" placeholder="Egreso">
+                        <input id="expenseInput" type="number" class="form-control" placeholder="Egreso">
                     </div>
                 </div>
-                <button type="submit" id = "itemInput" class="btn btn-primary col mt-4">Enviar data</button>
+                <button type="submit" id="itemInputButton" class="btn btn-primary col mt-4">Cargar data</button>
             </form>
         </div>
+        <div class="mt-4">
+            <button id="buttonBack" class="btn btn-primary offset-3 col-6 mt-4">Borrar todo y volver al inicio</button>
+        </div>
+
     </section>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
+    
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
@@ -66,6 +74,7 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
 <script src="objectClass.js"></script>
+
 <script src="main.js"></script>
 
 </html>
