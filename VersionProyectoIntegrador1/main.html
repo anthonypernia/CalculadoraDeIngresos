@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Calculadora de gastos - Entrada | Salida</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bodyBackground mt-4 mb-4">
+    <section class="ml-4 mr-4">
+        <div id="divTables" class="divBackground">
+            <h1 id="titulo_calculadora">Ingresos</h1>
+            <h2 id="subtitulo_calculadora"> </h2>
+            <table class="table" id="tableBalance">
+                <thead class="titleRow">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Items Registrados</th>
+                        <th scope="col">Ingresos Registrados</th>
+                        <th scope="col">Egresos registrados</th>
+                    </tr>
+                </thead>
+                <tbody class="itemsRow">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="m-4">
+        <div>
+            <form id="formInputData">
+                <div class="form-row">
+                    <div class="col">
+                        <input id = "itemInput" type="text" class="form-control" placeholder="Item a cargar">
+                    </div>
+                    <div class="col">
+                        <input id = "incomeInput" type="number" class="form-control" placeholder="Ingreso">
+                    </div>
+                    <div class="col">
+                        <input id = "expenseInput" type="number" class="form-control" placeholder="Egreso">
+                    </div>
+                </div>
+                <button type="submit" id = "itemInput" class="btn btn-primary col mt-4">Enviar data</button>
+            </form>
+        </div>
+    </section>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+<script src="objectClass.js"></script>
+<script src="main.js"></script>
+
+</html>
