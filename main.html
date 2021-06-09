@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/calculadora.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -23,13 +24,15 @@
                 <thead class="titleRow">
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Items Registrados</th>
-                        <th scope="col">Ingresos Registrados</th>
-                        <th scope="col">Egresos registrados</th>
+                        <th scope="col">Item Registrado</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Ingreso Registrado</th>
+                        <th scope="col">Egreso registrado</th>
                     </tr>
                 </thead>
                 <tbody class="itemsRow">
                     <tr>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -44,14 +47,18 @@
         <div>
             <form id="formInputData">
                 <div class="form-row">
-                    <div class="col">
+                    <div class="col-5">
                         <input id="itemInput" type="text" class="form-control" placeholder="Item a cargar">
                     </div>
-                    <div class="col">
+
+                    <div class="col-3">
                         <input id="incomeInput" type="number" class="form-control" placeholder="Ingreso">
                     </div>
-                    <div class="col">
+                    <div class="col-3">
                         <input id="expenseInput" type="number" class="form-control" placeholder="Egreso">
+                    </div>
+                    <div class="col-1">
+                        <input id="itemCountInput" type="number" class="form-control" placeholder="Cantidad" value="1">
                     </div>
                 </div>
                 <button type="submit" id="itemInputButton" class="btn btn-primary col mt-4">Cargar data</button>

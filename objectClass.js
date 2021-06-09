@@ -1,5 +1,5 @@
 class Person {
-  constructor(id, name, expensesList) {
+  constructor(id, name) {
     this.id = id;
     this.name = name;
     this.expensesList = [];
@@ -10,9 +10,10 @@ class Person {
 }
 
 class Expense {
-  constructor(id, item, income, expense) {
+  constructor(id, item, count, income, expense) {
     this.id = id;
     this.item = item;
+    this.count=count;
     this.income = income;
     this.expense = expense;
   }
