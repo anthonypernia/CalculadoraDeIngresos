@@ -15,6 +15,9 @@ function getDataUser(e){
       sessionStorage.setItem("user", JSON.stringify(person));
       itemInputMain.href="main.html"
     }
+    else{
+      alert("Ingrese nombre de usuario")
+    }
 
    
   }
