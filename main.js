@@ -183,6 +183,7 @@ function obtainDataFromInit() {
     $(subtitulo).text("Buen dia " + person.name + "!!");
     console.log(personJson)
     updateRows();
+    $('#tableBalance').DataTable();
   } else {
     alert("Carga un usuario!");
     window.location.href = "index.html";
@@ -196,16 +197,21 @@ function backAndDelete() {
 
 
 $(document).ready(obtainDataFromInit());
+
 $("#buttonBack").on("click", () => {
   $('#buttonBack').fadeOut("slow");
   $('#buttonBack').fadeIn("slow");
   $('#buttonBack').hide();
   $('#divTables').hide();
   backAndDelete();
+
 });
 $("#formInputData").on("submit", () => {
   $('#formInputData').fadeOut("slow");
   $('#formInputData').fadeIn("slow");
   insertDataFromUser();
 });
+
+
+
 
