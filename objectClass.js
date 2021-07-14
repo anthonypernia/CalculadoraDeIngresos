@@ -3,9 +3,14 @@ class Person {
     this.id = id;
     this.name = name;
     this.expensesList = [];
+    this.password = null;
+    this.mail = null;
   }
   addExpense(expense) {
     this.expensesList.push(expense);
+  }
+  setPassword(password) {
+    this.password = password;
   }
 }
 

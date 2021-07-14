@@ -1,0 +1,47 @@
+[
+  {
+    "id": 99,
+    "name": "anthony",
+    "mail": "anthonyperniah@gmail.com",
+    "password": "anthony",
+    "expensesList":[
+        {
+            "count": "1",
+            "expense": "1",
+            "id": 6502,
+            "income": "12",
+            "item": "casa"
+        },
+        {
+            "count": "1",
+            "expense": "12",
+            "id": 2901,
+            "income": "21",
+            "item": "comida"
+        }
+    ]
+  },
+
+  {
+    "id": 88,
+    "name": "anthonypernia",
+    "mail": "anthonyperniah2@gmail.com",
+    "password": "anthonypernia22",
+    "expensesList": [
+        {
+            "count": "1",
+            "expense": "21",
+            "id": 4343,
+            "income": "1",
+            "item": "carro"
+        },
+        {
+            "count": "1",
+            "expense": "1",
+            "id": 1901,
+            "income": "1",
+            "item": "moto"
+        }
+    ]
+  }
+]

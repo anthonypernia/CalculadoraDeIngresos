@@ -3,7 +3,7 @@
 /*
 Texto
 */
-#titulo_init, #subtitulo_init, .textButton, input, #title_main, #subtitle_main{
+#titulo_init, #subtituloInit, .textButton, input, #title_main, #subtitle_main{
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
 }
@@ -14,14 +14,13 @@ Texto
 /*
 Boton de inicio
 */
-#buttonSendDataMain, #itemInputButton, #buttonBack{
+#buttonSendDataMain, #itemInputButton, #buttonBack, #buttonSendDataMainUserRegistered, #buttonOpenDataMainUserRegistered{
     color: black;
     background-color: #ABC4FF;
     border: black;
     
-
 }
-#buttonSendDataMain:hover, #itemInputButton:hover, #buttonBack:hover{
+#buttonSendDataMain:hover, #itemInputButton:hover, #buttonBack:hover, #buttonSendDataMainUserRegistered:hover, #buttonOpenDataMainUserRegistered:hover{
     color: rgb(36, 35, 35);
     background-color: #c8d9ff;
 }
@@ -60,5 +59,18 @@ h2{
 }
 h1{
     color:black;
+    text-align: center;
+}
+
+.textButton{
+    font-size: 18px;
+}
+/*
+subtitulos en los botones de inicio
+*/
+.buttonSubtitles{
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
     text-align: center;
 }

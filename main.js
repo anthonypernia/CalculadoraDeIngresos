@@ -1,6 +1,7 @@
-var titulo = document.getElementById("title_main");
+var titulo = "#title_main"
 var subtitulo = document.getElementById("subtitle_main");
-titulo.textContent = "Tabla de ingresos y egresos";
+var subtitulo = "#subtitle_main"
+$(titulo).text("Tabla de ingresos y egresos");
 var person = null;
 var divTable = document.getElementById("divTables");
 var buttonBack = document.getElementById("buttonBack");
@@ -27,6 +28,7 @@ function createRow(tbodyRef, expense) {
   newCell1.innerHTML = expense.item;
   newCell2.innerHTML = expense.count;
   if(expense.count>1){
+    $('#tableBalance').DataTable();
     if(expense.income>0 && expense.expense==0){
       newCell3.innerHTML = "$" + expense.income + " ($"+ expense.income * expense.count+") " ;
       newCell4.innerHTML = "$" + expense.expense;
@@ -63,6 +65,7 @@ function insertDataFromUser(e) {
     if (itemInput.value.length == 0) {
       itemInput.value = "No definido";
     }
+
     let expense = new Expense(
       Math.floor(Math.random() * 10001),
       itemInput.value,
@@ -106,7 +109,7 @@ function updateResult() {
       var color1 = "#FF0A54";
       var color2 = "#FAE0E4";
     }
-    ///generaro el html final que se pondra rojo, verde o amarillo
+    ///generamos el html final que se pondra rojo, verde o amarillo
     tableResult.className = "table";
     tableResult.style = "margin-top:50px;";
     tableResult.innerHTML =
@@ -166,6 +169,7 @@ tableTotalItems.innerHTML = headerTable + row
 //esta funcion es la que se activa al inicio, llama al objeto creado anteriormente
 function obtainDataFromInit() {
   personJson = JSON.parse(sessionStorage.getItem("user"));
+  console.log(personJson)
   if (personJson != null) {
     person = new Person(personJson.id, personJson.name);
 
@@ -176,7 +180,8 @@ function obtainDataFromInit() {
         );
       });
     }
-    subtitulo.textContent = "Buen dia " + person.name + "!!";
+    $(subtitulo).text("Buen dia " + person.name + "!!");
+    console.log(personJson)
     updateRows();
   } else {
     alert("Carga un usuario!");
@@ -189,14 +194,18 @@ function backAndDelete() {
   window.location.href = "index.html";
 }
 
-///probando jquery
+
 $(document).ready(obtainDataFromInit());
 $("#buttonBack").on("click", () => {
+  $('#buttonBack').fadeOut("slow");
+  $('#buttonBack').fadeIn("slow");
+  $('#buttonBack').hide();
+  $('#divTables').hide();
   backAndDelete();
 });
 $("#formInputData").on("submit", () => {
+  $('#formInputData').fadeOut("slow");
+  $('#formInputData').fadeIn("slow");
   insertDataFromUser();
 });
-//formInput.addEventListener("submit", insertDataFromUser);
-//document.addEventListener("DOMContentLoaded", obtainDataFromInit);
-//buttonBack.addEventListener("click", backAndDelete);
+
